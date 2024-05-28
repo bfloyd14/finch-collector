@@ -8,12 +8,12 @@ class Dog:  # Note that parens are optional if not inheriting from another class
     self.description = description
     self.age = age
 
-old_dogs = [
-  Dog('Lola', 'tan with a hint of silver', 'Kinda sassy and is down for a good treat.', 7),
-  Dog('Sasha', 'blue merl', 'great nose and cuddler.', 10),
-  Dog('Moe', 'tan', 'short legs but nice teeth.', 9),
-  Dog('Joy', 'black and tan merl', 'Alpha, she just wants to play frisbee.', 11),
-  Dog('George', 'white', 'loves to lay in bed', 12)
+dogs = [
+  Dog('Lola', 'Shitzu', 'Kinda sassy and is down for a good treat.', 7),
+  Dog('Sasha', 'Border Collie', 'great nose and cuddler.', 10),
+  Dog('Moe', 'Pitt-Bull Mix', 'short legs but nice teeth.', 9),
+  Dog('Joy', 'Shepard Mix', 'Alpha, she just wants to play frisbee.', 11),
+  Dog('George', 'Dobermann Pincher', 'loves to lay in bed', 12)
 ]
 
 # Create your views here.
@@ -25,4 +25,4 @@ def about(request):
   return render(request, 'about.html')
 
 def dog_index(request):
-  return render(request, {'old dogs': old_dogs})
+  return render(request, 'dogs/index.html', {'dogs': dogs})
