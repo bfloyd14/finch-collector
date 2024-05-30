@@ -22,6 +22,11 @@
   border-radius: var(--card-border-radius);
 }
 
+.card-image-container > img {
+  width: 75px;
+  height: 75px;
+}
+
 .card > a {
   text-decoration: none;
   color: var(--text-color);
