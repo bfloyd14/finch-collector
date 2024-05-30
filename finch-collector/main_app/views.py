@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from .models import Dog
+from .models import Dog, Toy
 from .forms import FeedingForm
 
 # Create your views here.
@@ -44,3 +44,7 @@ class DogUpdate(UpdateView):
 class DogDelete(DeleteView):
   model = Dog
   success_url = '/dogs/'  
+
+class ToyCreate(CreateView):
+  model = Toy
+  fields = '__all__'  
