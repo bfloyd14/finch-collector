@@ -11,11 +11,20 @@
   <div class="title">
     Old Dog Collector Dating Site
   </div>
-  
   <p class='slogan'>An Old Dog Can Learn New Tricks</p>
   <div class="cat-container">
     <img src="{% static 'images/old-dog.jpg' %}" alt="The Old Dog Collector" />
   </div>
 </section>
-
+{% if not user.is_authenticated %}
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}">
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+{% endif %}
 {% endblock %}
