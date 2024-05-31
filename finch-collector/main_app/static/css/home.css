@@ -23,11 +23,19 @@ main > section {
   max-width: 375px;
 }
 
-
 .cat-container {
   width: 80%;
 }
 
+.title{
+  font-size: 34px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.slogan{
+  font-size: 24px;
+}
 
 .login {
   display: flex;

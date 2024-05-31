@@ -93,12 +93,27 @@ nav li {
   padding: 5px 8px;
 }
 
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.header-logo-container img{
+  width: 45px;
+  height: 25px;
+  border-radius: 50%;
+}
+
 .header-logo-container {
   margin: auto;
   padding: 10px 20px 0;
   max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-
 .page-header {
   display: flex;
   align-items: center;
@@ -141,12 +156,6 @@ nav li {
 .danger {
   color: var(--danger);
   border-color: var(--danger);
-}
-
-.header-logo-container img{
-  width: 50px;
-  height: 50px;
-  margin-bottom: 50px;
 }
 
 .page-header h1 {

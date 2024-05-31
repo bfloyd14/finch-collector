@@ -6,13 +6,9 @@
   justify-content: center;
 }
 
-.cat-img {
+.cat-img img {
   width: 75%;
   max-width: 350px;
-}
-
-.cat-img img{
-  width: 100%;
 }
 
 .usr-img {

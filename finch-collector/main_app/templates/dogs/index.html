@@ -21,14 +21,22 @@ href="{% static "css//dogs/dog-index.css" %}"
       <a href='{% url "dog-detail" dog.id %}'>
       <div class="card-content">
         <div class="card-img-container">
+          {% if dog.gender == 'female' %}
           <img 
           src="{% static "images/grandma-dog.jpg" %}" 
           alt="An old dog"
           >
+          {% else %}
+          
+          <img 
+          src="{% static "images/dog-glasses.jpg" %}" 
+          alt="A smart dog"
+          >
+          {% endif %}
         </div>
         <h2 class="card-title">{{dog.name}}</h2>
         {% if dog.age > 0 %}
-        <p>A {{dog.age}} year old {{dog.breed}}</p>
+        <p>A {{dog.age}} year old {{dog.gender}}{{dog.breed}}</p>
         {% else %}
         <p>A {{dog.breed}} puppy.</p>
         {% endif %}

@@ -15,6 +15,10 @@
 .card-content {
   padding: 10px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .usr-img {
@@ -22,7 +26,7 @@
   border-radius: var(--card-border-radius);
 }
 
-.card-image-container > img {
+img  {
   width: 75px;
   height: 75px;
 }

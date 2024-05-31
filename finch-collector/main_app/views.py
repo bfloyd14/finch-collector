@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView
 
 from .models import Dog, Toy
 from .forms import FeedingForm
@@ -24,15 +25,6 @@ def dog_detail(request, dog_id):
     'feeding_form': feeding_form
     })
 
-def add_feeding(request, dog_id):
-  form = FeedingForm(request.POST)
-  if form.is_valid():
-    new_feeding = form.save(commit=False)
-    new_feeding.dog_id = dog_id
-    new_feeding.save()
-  return redirect('dog-detail', dog_id=dog_id)
-
-
 class DogCreate(CreateView):
   model = Dog
   fields = ['name', 'breed', 'description', 'age']
@@ -45,6 +37,28 @@ class DogDelete(DeleteView):
   model = Dog
   success_url = '/dogs/'  
 
+def add_feeding(request, dog_id):
+  form = FeedingForm(request.POST)
+  if form.is_valid():
+    new_feeding = form.save(commit=False)
+    new_feeding.dog_id = dog_id
+    new_feeding.save()
+  return redirect('dog-detail', dog_id=dog_id)
+
 class ToyCreate(CreateView):
   model = Toy
-  fields = '__all__'  
+  fields = '__all__'
+
+class ToyList(ListView):
+  model = Toy
+
+class ToyDetail(DetailView):
+  model = Toy
+
+class ToyUpdate(UpdateView):
+  model = Toy
+  fields = ['name', 'color']
+
+class ToyDelete(DeleteView):
+  model = Toy
+  success_url = '/toys/'

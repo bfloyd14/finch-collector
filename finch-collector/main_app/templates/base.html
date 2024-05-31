@@ -25,12 +25,16 @@
           alt="The Old Dog Logo"
         >
       </a>
+      <div class="title">
+        Old Dog Dating
+      </div>
     </div>
     <nav>
       <ul>
         <li><a href="{% url "about" %}">About</a></li>
         <li><a href="{% url "dog-create" %}">Add a Old Dog</a></li>
         <li><a href="{% url 'toy-create' %}">Add a Toy</a></li>
+        <li><a href="{% url 'toy-index' %}">All Toys</a></li>
         <li><a href="{% url "dog-index" %}">All Old Dogs</a></li>
       </ul>
     </nav>
