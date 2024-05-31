@@ -27,11 +27,11 @@ def dog_detail(request, dog_id):
 
 class DogCreate(CreateView):
   model = Dog
-  fields = ['name', 'breed', 'description', 'age']
+  fields = ['name', 'breed', 'description', 'gender', 'age']
 
 class DogUpdate(UpdateView):
   model = Dog
-  fields = ['breed', 'description', 'age']
+  fields = ['breed', 'description', 'gender', 'age']
 
 class DogDelete(DeleteView):
   model = Dog

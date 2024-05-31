@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .card {
@@ -10,6 +11,7 @@
   margin: 10px;
   border: var(--borders);
   box-shadow: var(--card-box-shadow);
+  text-align: center;
 }
 
 .card-content {
@@ -19,6 +21,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.card-content > p {
+  text-align: center;
 }
 
 .usr-img {
